@@ -1,4 +1,4 @@
-// e1433 藤本恭子 「構造体とポインタによるスタック」
+// e1433 藤本恭子「構造体とポインタによるスタック」
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,13 +13,6 @@ cell_t *listhead; //stackの先頭を表すcell_tのポインタ
 cell_t *lalloc(void){ //メモリを確保する関数 構造体のポインタを返す
   return((cell_t *)malloc(sizeof(cell_t)));
 }
-
-//cell_t *initlist(void){ //stackを初期化する関数
-//  cell_t *p;
-//  p = lalloc();
-//  p->next = NULL;
-//  return(p);
-//}
 
 cell_t *top = NULL; //stackの最上層を表すcell_tのポインタ
 
