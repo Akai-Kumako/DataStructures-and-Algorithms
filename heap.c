@@ -63,7 +63,7 @@ int main(void){
       if(n < 1) printf(" - Heap is empty\n");
       else get();
     }else if(com == 'p'){
-      for(int i = 1; i < n; ++i){
+      for(int i = 1; i < n + 1; ++i){
         printf(" - %d [%d]\n", h[i], i);
       }
     }else if(com == 'q'){
