@@ -1,0 +1,101 @@
+Script started on Fri Nov 24 00:06:40 2017
+[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$cat ringbuffer.c
+// e1433 藤本恭子 「リングバッファ]
+
+#include <stdio.h>
+
+#define QUEUE 6
+
+int head = 0;
+int tail = 0;
+int queue[QUEUE] = {0};
+
+int queue_next(int i){
+  return(((i) + 1) % QUEUE);
+}
+
+void push(int data){
+  if(queue_next(tail) != head){
+    queue[tail] = data;
+    tail = queue_next(tail);
+    printf(" - Pushed\n");
+  }else{ 
+    printf(" - Queue is full\n");
+  }
+}
+
+void pop(){
+  if(head != tail){
+    head = queue_next(head);
+    printf(" - Poped\n");
+  }else{
+    printf(" - Queue is empty\n");
+  }
+}
+
+void queue_print(){
+  printf(" - ");
+  for(int i = head; i != tail; i = queue_next(i))
+    printf("%d ", queue[i]);
+  printf("\n");
+}
+
+int main(void){
+  char com;
+  int n;
+
+  while(1){
+    printf("Please enter the command : ");
+    scanf("%1s", &com);
+    if(com == 'i'){ 
+      printf(" - Please enter the data : ");
+      scanf("%d", &n);
+      push(n);
+    }else if(com == 'd'){
+      pop();
+    }else if(com == 'p'){
+      queue_print();
+    }else if(com == 'q'){
+      break;
+    }else{
+      printf(" - Please enter i, d, p or q\n");
+    }
+  }
+}  
+[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0mgcc ringbuffer.c
+[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0m./a.out
+Please enter the command : i
+ - Please enter the data : 2
+ - Pushed
+Please enter the command : i
+ - Please enter the data : 3
+ - Pushed
+Please enter the command : i
+ - Please enter the data : 4
+ - Pushed
+Please enter the command : p
+ - 2 3 4 
+Please enter the command : i
+ - Please enter the data : 5
+ - Pushed
+Please enter the command : i
+ - Please enter the data : 6
+ - Pushed
+Please enter the command : i
+ - Please enter the data : 7
+ - Queue is full
+Please enter the command : p
+ - 2 3 4 5 6 
+Please enter the command : d
+ - Poped
+Please enter the command : d
+ - Poped
+Please enter the command : d
+ - Poped
+Please enter the command : p
+ - 5 6 
+Please enter the command : q
+[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0mexit
+exit
+
+Script done on Fri Nov 24 00:08:21 2017
