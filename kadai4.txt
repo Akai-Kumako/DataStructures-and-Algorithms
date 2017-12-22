@@ -1,0 +1,32 @@
+Script started on Fri Dec 22 16:21:58 2017
+[?1034h[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0mcat fibonacci.c
+//e1433 藤本恭子「フィボナッチ数」
+
+#include<stdio.h>
+#include<math.h>
+
+#define SQRT sqrt(5)
+
+int main(void){
+  int n;
+  int ans;
+  scanf("%d", &n);
+  ans = pow((1 + SQRT) / 2, n) / SQRT - pow((1 - SQRT) / 2, n) / SQRT;
+  printf("%d\n", ans);
+}
+[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0m./a.out
+0
+0
+[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0m./a.out
+1
+1
+[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0m./a.out
+10
+55
+[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0m./.[Ka.out
+46
+1836311903
+[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0mexit
+exit
+
+Script done on Fri Dec 22 16:22:47 2017
