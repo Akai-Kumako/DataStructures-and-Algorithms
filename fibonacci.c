@@ -3,12 +3,15 @@
 #include<stdio.h>
 #include<math.h>
 
-#define SQRT sqrt(5)
-
 int main(void){
-  int n;
-  int ans;
+  int i = 1, j = 0;
+  int n = 0;
   scanf("%d", &n);
-  ans = pow((1 + SQRT) / 2, n) / SQRT - pow((1 - SQRT) / 2, n) / SQRT;
-  printf("%d\n", ans);
+  
+  for(int k = 0; k < n; k++){
+    j = j + i;
+    i = j - i;
+  }
+  printf("%d\n", j);
+  return 0;
 }
