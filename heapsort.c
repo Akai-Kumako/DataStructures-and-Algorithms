@@ -1,4 +1,3 @@
-// e1433 藤本 恭子 「ヒープソート」
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -31,7 +30,7 @@ void down(int k){
 void get(){
   int temp = h[1];
   h[1] = h[n];
-  h[n] = h[1];
+  h[n] = temp;
   n = n - 1;
   down(1);
 }
@@ -67,3 +66,4 @@ int main(void){
   }
   printf("%d\n", h[500000]);
 }
+

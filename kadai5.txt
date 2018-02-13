@@ -1,6 +1,5 @@
-Script started on Sat Feb 10 12:16:45 2018
-[?1034h[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0mcat heapsort.c
-// e1433 藤本 恭子 「ヒープソート」
+スクリプトは 2018年02月13日 14時30分32秒
+ に開始しました[01;32me1433@DJ[01;34m ~/ダウンロード $[00m cat heapsort.c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,9 +11,10 @@ int A[HEAP_SIZE];
 
 void init(int seed){
   srand((unsigned int)seed);
-  for(int i = 1; i <= HEAP_SIZE; i++){
-    A[i] = rand();
-  } 
+  int j;
+  for(j = 1; j <= HEAP_SIZE; j++){
+    A[j] = rand(); 
+  }
 }
 
 void down(int k){
@@ -33,7 +33,7 @@ void down(int k){
 void get(){
   int temp = h[1];
   h[1] = h[n];
-  h[n] = h[1];
+  h[n] = temp;
   n = n - 1;
   down(1);
 }
@@ -61,28 +61,32 @@ int main(void){
   printf("Please enter seed : ");
   scanf("%d", &getSeed);
   init(getSeed);
-  for(int i = 1; i <= HEAP_SIZE; i++){
-    put(A[i]);
+  int k, m;
+  for(k = 1; k <= HEAP_SIZE; k++){
+    put(A[k]);
   }
-  for(int i = 1; i <= HEAP_SIZE; i++){
+  for(m = 1; m <= HEAP_SIZE; m++){
     get();
   }
   printf("%d\n", h[500000]);
+  return 0;
 }
-[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0mgcc heapsort.c
-[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0m./a.out
+
+[01;32me1433@DJ[01;34m ~/ダウンロード $[00m gcc heapsort.c
+[01;32me1433@DJ[01;34m ~/ダウンロード $[00m ./a.out
 Please enter seed : 100
-236627797
-[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0m./a.out
+1075394309
+[01;32me1433@DJ[01;34m ~/ダウンロード $[00m ./a.out
 Please enter seed : 500
-201557582
-[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0m./a.out
+1074995862
+[01;32me1433@DJ[01;34m ~/ダウンロード $[00m ./a.out
 Please enter seed : 1000
-240731058
-[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0m./a.out
+1072787057
+[01;32me1433@DJ[01;34m ~/ダウンロード $[00m ./a.out
 Please enter seed : 2000
-589748071
-[36mRed-Velvet-Cake:DataStructures-and-Algorithms kyoko$[0mexit
+1074773249
+[01;32me1433@DJ[01;34m ~/ダウンロード $[00m exit
 exit
 
-Script done on Sat Feb 10 12:17:46 2018
+スクリプトは 2018年02月13日 14時31分16秒
+ に終了しました
